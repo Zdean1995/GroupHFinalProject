@@ -16,6 +16,8 @@
 		B6BD438B29CB79280060D103 /* GroupHFinalProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD438A29CB79280060D103 /* GroupHFinalProjectTests.swift */; };
 		B6BD439529CB79280060D103 /* GroupHFinalProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD439429CB79280060D103 /* GroupHFinalProjectUITests.swift */; };
 		B6BD439729CB79280060D103 /* GroupHFinalProjectUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD439629CB79280060D103 /* GroupHFinalProjectUITestsLaunchTests.swift */; };
+		B6BD43AC29E9AF140060D103 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD43AB29E9AF140060D103 /* MenuItem.swift */; };
+		B6BD43B029E9B0F40060D103 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD43AF29E9B0F40060D103 /* Order.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		B6BD439029CB79280060D103 /* GroupHFinalProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GroupHFinalProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6BD439429CB79280060D103 /* GroupHFinalProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupHFinalProjectUITests.swift; sourceTree = "<group>"; };
 		B6BD439629CB79280060D103 /* GroupHFinalProjectUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupHFinalProjectUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B6BD43AB29E9AF140060D103 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		B6BD43AF29E9B0F40060D103 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				B6BD437C29CB79270060D103 /* Assets.xcassets */,
 				B6BD437E29CB79270060D103 /* LaunchScreen.storyboard */,
 				B6BD438129CB79270060D103 /* Info.plist */,
+				B6BD43AB29E9AF140060D103 /* MenuItem.swift */,
+				B6BD43AF29E9B0F40060D103 /* Order.swift */,
 			);
 			path = GroupHFinalProject;
 			sourceTree = "<group>";
@@ -258,7 +264,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6BD43AC29E9AF140060D103 /* MenuItem.swift in Sources */,
 				B6BD437829CB79270060D103 /* ViewController.swift in Sources */,
+				B6BD43B029E9B0F40060D103 /* Order.swift in Sources */,
 				B6BD437429CB79270060D103 /* AppDelegate.swift in Sources */,
 				B6BD437629CB79270060D103 /* SceneDelegate.swift in Sources */,
 			);
