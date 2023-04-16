@@ -16,6 +16,16 @@ class MenuItem:Identifiable {
         self.price = price
     }
     
+    init(coreString: String){
+        let strings = coreString.split(separator: ",")
+        self.name = String(strings[0])
+        self.price = Double(strings[1])!
+    }
+    
+    func toString() -> String {
+        return name + "," + String(price)
+    }
+    
     public func createToppingsList() -> [MenuItem]{
         var toppings = [MenuItem]()
         toppings.append(MenuItem(name: "Pepperoni", price:0.0))

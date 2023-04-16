@@ -230,6 +230,81 @@
             </objects>
             <point key="canvasLocation" x="1661.8320610687022" y="-27.464788732394368"/>
         </scene>
+        <!--Table View Controller-->
+        <scene sceneID="dvb-wy-nNF">
+            <objects>
+                <tableViewController id="QpR-Ne-uq4" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="igB-MA-pgf">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="133" id="hWC-O1-BS6" customClass="PrevOrderCell" customModule="GroupHFinalProject" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="133"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hWC-O1-BS6" id="e6w-4N-syR">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="133"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pizza Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TX4-rY-pCt">
+                                            <rect key="frame" x="20" y="11" width="218" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Drink Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6GW-5e-VEd">
+                                            <rect key="frame" x="20" y="40" width="86" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Side Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LY2-k4-l2S">
+                                            <rect key="frame" x="20" y="69" width="80" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1U-o4-myY">
+                                            <rect key="frame" x="20" y="98" width="85" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="85" id="X3H-fl-beZ"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="m1U-o4-myY" firstAttribute="leading" secondItem="TX4-rY-pCt" secondAttribute="leading" id="8cv-Ip-Zjn"/>
+                                        <constraint firstItem="m1U-o4-myY" firstAttribute="centerX" secondItem="6GW-5e-VEd" secondAttribute="centerX" id="IIX-Yx-ufF"/>
+                                        <constraint firstItem="6GW-5e-VEd" firstAttribute="top" secondItem="TX4-rY-pCt" secondAttribute="bottom" constant="8" id="M3c-zY-xSI"/>
+                                        <constraint firstItem="m1U-o4-myY" firstAttribute="leading" secondItem="e6w-4N-syR" secondAttribute="leadingMargin" id="Rm6-AV-ME3"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="m1U-o4-myY" secondAttribute="bottom" constant="3" id="ZNS-ii-2Es"/>
+                                        <constraint firstItem="6GW-5e-VEd" firstAttribute="centerX" secondItem="TX4-rY-pCt" secondAttribute="centerX" constant="-66" id="ZVl-Ot-cIm"/>
+                                        <constraint firstItem="m1U-o4-myY" firstAttribute="leading" secondItem="6GW-5e-VEd" secondAttribute="leading" id="gun-LO-dOh"/>
+                                        <constraint firstItem="LY2-k4-l2S" firstAttribute="top" secondItem="6GW-5e-VEd" secondAttribute="bottom" constant="8" id="oHO-Pb-slr"/>
+                                        <constraint firstItem="m1U-o4-myY" firstAttribute="top" secondItem="LY2-k4-l2S" secondAttribute="bottom" constant="8" id="wr6-PF-sbV"/>
+                                        <constraint firstItem="m1U-o4-myY" firstAttribute="leading" secondItem="LY2-k4-l2S" secondAttribute="leading" id="zxx-uk-gMB"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="drinkLabel" destination="6GW-5e-VEd" id="0Mg-Vb-DTb"/>
+                                    <outlet property="pizzaLabel" destination="LY2-k4-l2S" id="Ab0-Kf-jul"/>
+                                    <outlet property="priceLabel" destination="m1U-o4-myY" id="gT6-Wt-CKW"/>
+                                    <outlet property="sideLabel" destination="LY2-k4-l2S" id="TFJ-oO-4og"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="QpR-Ne-uq4" id="5Ac-XU-8xe"/>
+                            <outlet property="delegate" destination="QpR-Ne-uq4" id="ISs-RD-hbs"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dG7-bJ-cXJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2568.7022900763359" y="-30.281690140845072"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="3z1-1p-YF4">
             <objects>

@@ -21,6 +21,10 @@
 		B6BD43AC29E9AF140060D103 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD43AB29E9AF140060D103 /* MenuItem.swift */; };
 		B6BD43B029E9B0F40060D103 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD43AF29E9B0F40060D103 /* Order.swift */; };
 		B6BD440929ECA1300060D103 /* OrderModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B6BD440729ECA12F0060D103 /* OrderModel.xcdatamodeld */; };
+		B6BD440C29ECA39F0060D103 /* PrevOrder+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD440A29ECA39F0060D103 /* PrevOrder+CoreDataClass.swift */; };
+		B6BD440D29ECA39F0060D103 /* PrevOrder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD440B29ECA39F0060D103 /* PrevOrder+CoreDataProperties.swift */; };
+		B6BD440F29ECA4690060D103 /* PreviousOrdersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD440E29ECA4690060D103 /* PreviousOrdersTableViewController.swift */; };
+		B6BD441129ECA8AA0060D103 /* PrevOrderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD441029ECA8AA0060D103 /* PrevOrderCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +63,10 @@
 		B6BD43AB29E9AF140060D103 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		B6BD43AF29E9B0F40060D103 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		B6BD440829ECA1300060D103 /* OrderModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = OrderModel.xcdatamodel; sourceTree = "<group>"; };
+		B6BD440A29ECA39F0060D103 /* PrevOrder+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrevOrder+CoreDataClass.swift"; sourceTree = "<group>"; };
+		B6BD440B29ECA39F0060D103 /* PrevOrder+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PrevOrder+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		B6BD440E29ECA4690060D103 /* PreviousOrdersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviousOrdersTableViewController.swift; sourceTree = "<group>"; };
+		B6BD441029ECA8AA0060D103 /* PrevOrderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrevOrderCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +117,8 @@
 		B6BD437229CB79270060D103 /* GroupHFinalProject */ = {
 			isa = PBXGroup;
 			children = (
+				B6BD440A29ECA39F0060D103 /* PrevOrder+CoreDataClass.swift */,
+				B6BD440B29ECA39F0060D103 /* PrevOrder+CoreDataProperties.swift */,
 				B6BD437329CB79270060D103 /* AppDelegate.swift */,
 				B6BD437529CB79270060D103 /* SceneDelegate.swift */,
 				B6BD437729CB79270060D103 /* ViewController.swift */,
@@ -121,6 +131,8 @@
 				7F7315EB29EB9B270086FAB7 /* NewOrderViewController.swift */,
 				7F7315F329EC080B0086FAB7 /* ToppinsTVC.swift */,
 				B6BD440729ECA12F0060D103 /* OrderModel.xcdatamodeld */,
+				B6BD440E29ECA4690060D103 /* PreviousOrdersTableViewController.swift */,
+				B6BD441029ECA8AA0060D103 /* PrevOrderCell.swift */,
 			);
 			path = GroupHFinalProject;
 			sourceTree = "<group>";
@@ -276,9 +288,13 @@
 				7F7315EC29EB9B270086FAB7 /* NewOrderViewController.swift in Sources */,
 				B6BD43AC29E9AF140060D103 /* MenuItem.swift in Sources */,
 				B6BD437829CB79270060D103 /* ViewController.swift in Sources */,
+				B6BD440F29ECA4690060D103 /* PreviousOrdersTableViewController.swift in Sources */,
 				B6BD43B029E9B0F40060D103 /* Order.swift in Sources */,
 				B6BD440929ECA1300060D103 /* OrderModel.xcdatamodeld in Sources */,
+				B6BD440C29ECA39F0060D103 /* PrevOrder+CoreDataClass.swift in Sources */,
+				B6BD441129ECA8AA0060D103 /* PrevOrderCell.swift in Sources */,
 				7F7315F429EC080B0086FAB7 /* ToppinsTVC.swift in Sources */,
+				B6BD440D29ECA39F0060D103 /* PrevOrder+CoreDataProperties.swift in Sources */,
 				B6BD437429CB79270060D103 /* AppDelegate.swift in Sources */,
 				B6BD437629CB79270060D103 /* SceneDelegate.swift in Sources */,
 			);

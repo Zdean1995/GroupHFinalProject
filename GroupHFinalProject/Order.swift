@@ -11,13 +11,22 @@ class Order{
     var size: MenuItem
     var drink: MenuItem
     var side: MenuItem
-    var toppings: [MenuItem]
+    var toppings = [MenuItem]()
     
     init(size: MenuItem, drink: MenuItem, side: MenuItem, toppings: [MenuItem]) {
         self.size = size
         self.drink = drink
         self.side = side
         self.toppings = toppings
+    }
+    
+    init(prevOrder: PrevOrder){
+        self.size = MenuItem(coreString: prevOrder.size!)
+        self.drink = MenuItem(coreString: prevOrder.drink!)
+        self.side = MenuItem(coreString: prevOrder.side!)
+        for topping in prevOrder.toppings!{
+            self.toppings.append(MenuItem(coreString: topping))
+        }
     }
     
     func calculateTotalPrice() -> Double {
