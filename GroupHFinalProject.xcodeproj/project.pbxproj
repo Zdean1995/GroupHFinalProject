@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7F7315EC29EB9B270086FAB7 /* NewOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7315EB29EB9B270086FAB7 /* NewOrderViewController.swift */; };
+		7F7315F429EC080B0086FAB7 /* ToppinsTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F7315F329EC080B0086FAB7 /* ToppinsTVC.swift */; };
 		B6BD437429CB79270060D103 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD437329CB79270060D103 /* AppDelegate.swift */; };
 		B6BD437629CB79270060D103 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD437529CB79270060D103 /* SceneDelegate.swift */; };
 		B6BD437829CB79270060D103 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BD437729CB79270060D103 /* ViewController.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7F7315EB29EB9B270086FAB7 /* NewOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewOrderViewController.swift; sourceTree = "<group>"; };
+		7F7315F329EC080B0086FAB7 /* ToppinsTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToppinsTVC.swift; sourceTree = "<group>"; };
 		B6BD437029CB79270060D103 /* GroupHFinalProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroupHFinalProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6BD437329CB79270060D103 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6BD437529CB79270060D103 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,8 @@
 				B6BD438129CB79270060D103 /* Info.plist */,
 				B6BD43AB29E9AF140060D103 /* MenuItem.swift */,
 				B6BD43AF29E9B0F40060D103 /* Order.swift */,
+				7F7315EB29EB9B270086FAB7 /* NewOrderViewController.swift */,
+				7F7315F329EC080B0086FAB7 /* ToppinsTVC.swift */,
 			);
 			path = GroupHFinalProject;
 			sourceTree = "<group>";
@@ -264,9 +270,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F7315EC29EB9B270086FAB7 /* NewOrderViewController.swift in Sources */,
 				B6BD43AC29E9AF140060D103 /* MenuItem.swift in Sources */,
 				B6BD437829CB79270060D103 /* ViewController.swift in Sources */,
 				B6BD43B029E9B0F40060D103 /* Order.swift in Sources */,
+				7F7315F429EC080B0086FAB7 /* ToppinsTVC.swift in Sources */,
 				B6BD437429CB79270060D103 /* AppDelegate.swift in Sources */,
 				B6BD437629CB79270060D103 /* SceneDelegate.swift in Sources */,
 			);

@@ -14,6 +14,14 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func navigateNewOrder(_ sender: UIButton) {
+        // Using storyboard
+//        let storyboard = self.storyboard?.instantiateViewController(withIdentifier: "NewOrderViewController") as! NewOrderViewController
+//        self.navigationController?.pushViewController(storyboard, animated:true)
+        
+        // Using Segue
+        self.performSegue(withIdentifier: "newOrder", sender: self)
+    }
+    
 }
 
