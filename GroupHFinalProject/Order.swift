@@ -19,7 +19,7 @@ class Order:Identifiable{
         self.delivery = delivery
     }
     
-
+    //calculates the price based on the pizza size and if it's delivery or not.
     func calculateTotalPrice() -> Double {
         var price = 0.0
 
@@ -36,11 +36,13 @@ class Order:Identifiable{
 
         return price
     }
-
+    
+    //returns the amount of tax for the order
     func calculateTax() -> Double {
         return (calculateTotalPrice() * 0.13)
     }
-
+    
+    //returns the total price with the taxes
     func calculateTotalPriceWithTax() -> Double {
         return calculateTotalPrice() + calculateTax()
     }
