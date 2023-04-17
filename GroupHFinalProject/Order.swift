@@ -7,41 +7,42 @@
 
 import Foundation
 
+//the class for the order. the size is the size of the pizza, the toppings are what the customer wants on the pizza, and the delivery is a boolean to determine if the order is delivery or pickup.
 class Order{
-    var size: MenuItem
-    var drink: MenuItem
-    var side: MenuItem
-    var toppings = [MenuItem]()
+    var size: String
+    var toppings: String
+    var delivery: Bool
     
-    init(size: MenuItem, drink: MenuItem, side: MenuItem, toppings: [MenuItem]) {
+    init(size: String, toppings: String, delivery: Bool) {
         self.size = size
-        self.drink = drink
-        self.side = side
         self.toppings = toppings
+        self.delivery = delivery
     }
     
-    init(prevOrder: PrevOrder){
-        self.size = MenuItem(coreString: prevOrder.size!)
-        self.drink = MenuItem(coreString: prevOrder.drink!)
-        self.side = MenuItem(coreString: prevOrder.side!)
-        for topping in prevOrder.toppings!{
-            self.toppings.append(MenuItem(coreString: topping))
-        }
-    }
-    
+    //calculates the price based on the pizza size and if it's delivery or not.
     func calculateTotalPrice() -> Double {
-        var toppingsPrice: Double = 0.0
-        for topping in toppings {
-            toppingsPrice += topping.price
+        var price = 0.0
+        
+        switch size{
+        case "Large" : price += 15.00
+        case "Medium": price += 12.0
+        case "Small": price += 10.0
+        default: price += 0.0
         }
         
-        return size.price + drink.price + side.price + toppingsPrice
+        if(delivery){
+            price += 3.0
+        }
+        
+        return price
     }
     
+    //returns the amount of tax for the order
     func calculateTax() -> Double {
         return (calculateTotalPrice() * 0.13)
     }
     
+    //returns the total price with the taxes
     func calculateTotalPriceWithTax() -> Double {
         return calculateTotalPrice() + calculateTax()
     }
