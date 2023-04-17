@@ -11,7 +11,6 @@ class PrevOrderCell: UITableViewCell {
 
   
     @IBOutlet weak var toppinsLabel: UILabel!
-    
     @IBOutlet weak var priceLabel: UILabel!
     @IBOutlet weak var deliveryLabel: UILabel!
     @IBOutlet weak var pizzaLabel: UILabel!

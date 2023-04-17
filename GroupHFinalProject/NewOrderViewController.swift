@@ -113,7 +113,7 @@ class NewOrderViewController: UIViewController {
         } else {
             let prevOrder = PrevOrder(context: context)
             prevOrder.size = order.size
-            prevOrder.toppings = order.toppings
+            prevOrder.toppings = toppinsTextFiled.text!
             prevOrder.delivery = order.delivery
             prevOrder.price = "$" + String(format: "%.2f", order.calculateTotalPriceWithTax())
             do {

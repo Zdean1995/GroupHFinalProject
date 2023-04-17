@@ -10,6 +10,7 @@ import CoreData
 
 class PreviousOrdersTableViewController: UITableViewController {
 
+    @IBOutlet weak var testLabel: UILabel!
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var viewController:ViewController!
     var defualtText: String = "Default"
@@ -23,6 +24,8 @@ class PreviousOrdersTableViewController: UITableViewController {
         catch {
             
         }
+        
+        testLabel.text = String(prevOrders.count)
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -39,7 +42,7 @@ class PreviousOrdersTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return viewController.orders.count
+        return prevOrders.count
     }
     
     
@@ -56,7 +59,7 @@ class PreviousOrdersTableViewController: UITableViewController {
         cell.pizzaLabel.text = prevOrder.size! + " Pizza"
         cell.toppinsLabel.text = prevOrder.toppings
         cell.deliveryLabel.text = prevOrder.delivery ? "Delivery" : "Pick Up"
-        cell.priceLabel.text = "Total Price: $" + prevOrder.price!
+        cell.priceLabel.text = "Total Price: " + prevOrder.price!
         return cell
     }
 

@@ -175,12 +175,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0z-KI-gcm">
-                                <rect key="frame" x="141" y="770" width="97" height="35"/>
+                                <rect key="frame" x="148" y="764" width="97" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Checkout"/>
                                 <connections>
-                                    <action selector="checkOutListener:" destination="IV4-4d-Zqu" eventType="touchUpInside" id="Wa3-lb-Teh"/>
+                                    <action selector="checkOutListener:" destination="IV4-4d-Zqu" eventType="touchUpInside" id="slb-It-cos"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -214,9 +214,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <label key="tableHeaderView" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="AjN-nW-Yce">
+                            <rect key="frame" x="0.0" y="0.0" width="393" height="44"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="prevCell" rowHeight="133" id="hWC-O1-BS6" customClass="PrevOrderCell" customModule="GroupHFinalProject" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="50" width="393" height="133"/>
+                                <rect key="frame" x="0.0" y="94" width="393" height="133"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hWC-O1-BS6" id="e6w-4N-syR">
                                     <rect key="frame" x="0.0" y="0.0" width="393" height="133"/>
@@ -281,6 +288,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Previous Orders" id="EiT-7A-rTf"/>
+                    <connections>
+                        <outlet property="testLabel" destination="AjN-nW-Yce" id="bk4-B6-cIF"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dG7-bJ-cXJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
