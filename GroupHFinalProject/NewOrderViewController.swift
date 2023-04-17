@@ -107,17 +107,20 @@ class NewOrderViewController: UIViewController {
             self.showToast(message: "Please Select Size", font: .systemFont(ofSize: 12.0),color: UIColor.red)
             return
         }
-        if (!toppinsTextFiled.hasText){
-            self.showToast(message: "Please Enter Toppings", font: .systemFont(ofSize: 12.0),color: UIColor.red)
-            return
-        } else {
+         else {
+             if (!toppinsTextFiled.hasText){
+                 order.toppings = "Nothing"
+             } else {
+                 order.toppings = toppinsTextFiled.text!
+             }
             let prevOrder = PrevOrder(context: context)
             prevOrder.size = order.size
-            prevOrder.toppings = toppinsTextFiled.text!
+            prevOrder.toppings = order.toppings
             prevOrder.delivery = order.delivery
             prevOrder.price = "$" + String(format: "%.2f", order.calculateTotalPriceWithTax())
             do {
                 try context.save()
+                
             }
             catch{
                 self.showToast(message: "Can't connect to core data", font: .systemFont(ofSize: 12.0),color: UIColor.red)
