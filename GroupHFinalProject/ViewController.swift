@@ -23,5 +23,8 @@ class ViewController: UIViewController {
         self.performSegue(withIdentifier: "newOrder", sender: self)
     }
     
+    @IBAction func navigatePrevOrders(_ sender: UIButton) {
+        self.performSegue(withIdentifier: "prevOrders", sender: self)
+    }
 }
 

@@ -46,19 +46,19 @@ class PreviousOrdersTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "prevOrderCell", for: indexPath) as! PrevOrderCell
-        let order = Order(prevOrder: orders[indexPath.row])
-        var pizzaString = order.size.name + " Pizza"
-        
-        if (!order.toppings.isEmpty) {
-            if(order.toppings.count == 1){
-                pizzaString += " with " + order.toppings[0].name
-            }
-        }
-        
-        cell.pizzaLabel.text = pizzaString
-        cell.drinkLabel.text = order.drink.name
-        cell.sideLabel.text = order.side.name
-        cell.priceLabel.text = "Total Price: $" + String(order.calculateTotalPriceWithTax())
+//        let order = Order(prevOrder: orders[indexPath.row])
+//        var pizzaString = order.size.name + " Pizza"
+//
+//        if (!order.toppings.isEmpty) {
+//            if(order.toppings.count == 1){
+//                pizzaString += " with " + order.toppings[0].name
+//            }
+//        }
+//
+//        cell.pizzaLabel.text = pizzaString
+//        cell.drinkLabel.text = order.drink.name
+//        cell.sideLabel.text = order.side.name
+//        cell.priceLabel.text = "Total Price: $" + String(order.calculateTotalPriceWithTax())
 
         // Configure the cell...
 
