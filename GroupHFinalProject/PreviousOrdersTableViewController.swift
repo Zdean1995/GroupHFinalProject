@@ -6,62 +6,57 @@
 //
 
 import UIKit
+import CoreData
 
 class PreviousOrdersTableViewController: UITableViewController {
 
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    private var orders = [PrevOrder]()
+    var viewController:ViewController!
+    var defualtText: String = "Default"
+    var prevOrders = [PrevOrder]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getAllOrders()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
-
-    // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
-
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
-    }
-    
-    func getAllOrders() {
         do {
-            orders = try context.fetch(PrevOrder.fetchRequest())
+            prevOrders = try context.fetch(PrevOrder.fetchRequest())
         }
         catch {
             
         }
+
+        // Uncomment the following line to preserve selection between presentations
+        // self.clearsSelectionOnViewWillAppear = false
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+      
     }
 
+    // MARK: - Table view data source
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return viewController.orders.count
+    }
+    
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        let destVC = segue.destination as! ViewController
+//        destVC.orders = orders
+//    }
+   
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "prevOrderCell", for: indexPath) as! PrevOrderCell
-        let order = Order(prevOrder: orders[indexPath.row])
-        var pizzaString = order.size.name + " Pizza"
-        
-        if (!order.toppings.isEmpty) {
-            if(order.toppings.count == 1){
-                pizzaString += " with " + order.toppings[0].name
-            }
-        }
-        
-        cell.pizzaLabel.text = pizzaString
-        cell.drinkLabel.text = order.drink.name
-        cell.sideLabel.text = order.side.name
-        cell.priceLabel.text = "Total Price: $" + String(order.calculateTotalPriceWithTax())
+        let cell = tableView.dequeueReusableCell(withIdentifier: "prevCell", for: indexPath) as! PrevOrderCell
+        let prevOrder = prevOrders[indexPath.row]
 
-        // Configure the cell...
-
+        cell.pizzaLabel.text = prevOrder.size! + " Pizza"
+        cell.toppinsLabel.text = prevOrder.toppings
+        cell.deliveryLabel.text = prevOrder.delivery ? "Delivery" : "Pick Up"
+        cell.priceLabel.text = "Total Price: $" + prevOrder.price!
         return cell
     }
 
@@ -81,14 +76,13 @@ class PreviousOrdersTableViewController: UITableViewController {
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+        }
     }
     */
 
     /*
     // Override to support rearranging the table view.
     override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
     }
     */
 
@@ -102,7 +96,6 @@ class PreviousOrdersTableViewController: UITableViewController {
 
     /*
     // MARK: - Navigation
-
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.

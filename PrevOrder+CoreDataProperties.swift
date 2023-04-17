@@ -19,6 +19,7 @@ extension PrevOrder {
     @NSManaged public var size: String?
     @NSManaged public var toppings: String?
     @NSManaged public var price: String?
+    @NSManaged public var delivery: Bool
 
 }
 

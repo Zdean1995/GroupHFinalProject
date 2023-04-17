@@ -10,6 +10,11 @@ import Foundation
 import CoreData
 
 
-public class PrevOrder: NSManagedObject {
-
+public class PrevOrder: Identifiable {
+    var prevOrders:Order
+    var orderId:Int
+    init(id:Int, prevOrders: Order) {
+        self.prevOrders = prevOrders
+        self.orderId = id
+    }
 }
