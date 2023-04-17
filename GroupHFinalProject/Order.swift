@@ -7,6 +7,7 @@
 
 import Foundation
 
+//the class for the order object used in creating orders.
 class Order:Identifiable{
     var size: String
     var toppings: String

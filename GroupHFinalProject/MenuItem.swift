@@ -7,6 +7,8 @@
 
 import Foundation
 
+//Depricated.  Used for creating orders when the project had a larger scope.
+//We had to get rid of this since you can't save objects as properties in core data
 class MenuItem:Identifiable {
     var name: String
     var price: Double

@@ -38,11 +38,11 @@ class ViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationVC=segue.destination as? NewOrderViewController
+        /*let destinationVC=segue.destination as? NewOrderViewController
         destinationVC?.viewController = self
         
         let destinationPVC=segue.destination as? PreviousOrdersTableViewController
-        destinationPVC?.viewController = self
+        destinationPVC?.viewController = self*/
         
     }
     

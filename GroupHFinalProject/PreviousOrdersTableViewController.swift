@@ -10,46 +10,29 @@ import CoreData
 
 class PreviousOrdersTableViewController: UITableViewController {
 
-    @IBOutlet weak var testLabel: UILabel!
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    var viewController:ViewController!
     var defualtText: String = "Default"
     var prevOrders = [PrevOrder]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         do {
+            //loading the previous orders from the core data
             prevOrders = try context.fetch(PrevOrder.fetchRequest())
         }
         catch {
             
         }
-        
-        testLabel.text = String(prevOrders.count)
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
       
     }
-
-    // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
+        // return the number of rows
         return prevOrders.count
     }
-    
-    
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        let destVC = segue.destination as! ViewController
-//        destVC.orders = orders
-//    }
    
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -63,13 +46,6 @@ class PreviousOrdersTableViewController: UITableViewController {
         return cell
     }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             deletePrevOrder(prevOrder: prevOrders[indexPath.row])
@@ -80,6 +56,7 @@ class PreviousOrdersTableViewController: UITableViewController {
         }
     }
     
+    //the function used for deleting an order from the core data
     func deletePrevOrder(prevOrder: PrevOrder){
         context.delete(prevOrder)
         do {

@@ -181,6 +181,7 @@
                                 <buttonConfiguration key="configuration" style="filled" title="Checkout"/>
                                 <connections>
                                     <action selector="checkOutListener:" destination="IV4-4d-Zqu" eventType="touchUpInside" id="slb-It-cos"/>
+                                    <segue destination="QpR-Ne-uq4" kind="show" id="f6V-h8-c2V"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -305,6 +306,9 @@
             <point key="canvasLocation" x="-19.083969465648853" y="-27.464788732394368"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="f6V-h8-c2V"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
