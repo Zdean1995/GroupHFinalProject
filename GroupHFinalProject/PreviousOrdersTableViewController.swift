@@ -55,6 +55,30 @@ class PreviousOrdersTableViewController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
+    // Override to support conditional editing of the table view.
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        // Return false if you do not want the specified item to be editable.
+        return true
+    }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        switch segue.identifier{
+            case "edit":
+                let dst=segue.destination as! NewOrderViewController
+                let indexPath=tableView.indexPathForSelectedRow!
+                let index=indexPath.row
+                let order=prevOrders[index]
+                dst.prevOrder=order
+                dst.editMode=true
+            default:
+            preconditionFailure("unidentified segue ID: \(String(describing: segue.identifier))")
+            
+        }
+    }
     
     //the function used for deleting an order from the core data
     func deletePrevOrder(prevOrder: PrevOrder){

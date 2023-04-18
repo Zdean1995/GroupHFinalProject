@@ -53,7 +53,7 @@
             <objects>
                 <viewController storyboardIdentifier="NewOrderViewController" id="IV4-4d-Zqu" customClass="NewOrderViewController" customModule="GroupHFinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uLu-i6-r4z">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Pizza Toppins" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ivE-YQ-VKS">
@@ -190,6 +190,7 @@
                     </view>
                     <navigationItem key="navigationItem" title="New Order" id="htr-Sk-AGV"/>
                     <connections>
+                        <outlet property="checkOutButton" destination="h0z-KI-gcm" id="9SL-vC-Voe"/>
                         <outlet property="deliverySwitch" destination="8KG-xB-pD9" id="l5H-OE-ZAj"/>
                         <outlet property="lSwitch" destination="ayS-pV-vV9" id="zDp-i7-dts"/>
                         <outlet property="largeText" destination="NdE-os-pwh" id="i99-7C-5uy"/>
@@ -212,7 +213,7 @@
             <objects>
                 <tableViewController id="QpR-Ne-uq4" customClass="PreviousOrdersTableViewController" customModule="GroupHFinalProject" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="igB-MA-pgf">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="783"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -273,6 +274,7 @@
                                     <outlet property="pizzaLabel" destination="TX4-rY-pCt" id="KYg-Fe-8Jy"/>
                                     <outlet property="priceLabel" destination="m1U-o4-myY" id="IZN-7p-jmS"/>
                                     <outlet property="toppinsLabel" destination="6GW-5e-VEd" id="YuP-Aj-HbU"/>
+                                    <segue destination="IV4-4d-Zqu" kind="show" identifier="edit" id="iOv-rK-WIM"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -285,7 +287,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dG7-bJ-cXJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1708" y="-385"/>
+            <point key="canvasLocation" x="2828" y="-413"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3z1-1p-YF4">
@@ -308,6 +310,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="f6V-h8-c2V"/>
+        <segue reference="iOv-rK-WIM"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">

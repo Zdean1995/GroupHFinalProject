@@ -20,6 +20,7 @@ class NewOrderViewController: UIViewController {
     @IBOutlet weak var mSwitch: UISwitch!
     @IBOutlet weak var lSwitch: UISwitch!
     
+    @IBOutlet weak var checkOutButton: UIButton!
     @IBOutlet weak var subTotalLabel: UILabel!
     
     @IBOutlet weak var taxLabel: UILabel!
@@ -30,21 +31,53 @@ class NewOrderViewController: UIViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
+    var editMode:Bool = false
+    var prevOrder = PrevOrder()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         //the set up for the view items.  Small has been set as the default since it's the first option
-        sSwitch.setOn(true, animated: true)
-        mSwitch.setOn(false, animated: true)
-        lSwitch.setOn(false, animated: true)
-        deliverySwitch.setOn(false, animated: true)
+     
         getPrice()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        //sets the view for when the user is editing an existing order
+        if (editMode){
+            if(prevOrder.size == "Small"){
+                sSwitch.setOn(true, animated: true)
+                mSwitch.setOn(false, animated: true)
+                lSwitch.setOn(false, animated: true)
+            }else if ( prevOrder.size == "Medium" ){
+                mSwitch.setOn(true, animated: true)
+                sSwitch.setOn(false, animated: true)
+                lSwitch.setOn(false, animated: true)
+            }else{
+                lSwitch.setOn(true, animated: true)
+                sSwitch.setOn(false, animated: true)
+                mSwitch.setOn(false, animated: true)
+            }
+            toppinsTextFiled.text = prevOrder.toppings
+            deliverySwitch.setOn(prevOrder.delivery, animated: true)
+            
+            subTotalLabel.text = "$" + String(format: "%.2f", order.calculateTotalPrice())
+            taxLabel.text = "$" + String(format: "%.2f", order.calculateTax())
+            totalLabel.text = "$" + String(format: "%.2f", order.calculateTotalPriceWithTax())
+            checkOutButton.setTitle("Save", for: .normal)
+        }else{
+            sSwitch.setOn(true, animated: true)
+            mSwitch.setOn(false, animated: true)
+            lSwitch.setOn(false, animated: true)
+            deliverySwitch.setOn(false, animated: true)
+        }
+
+      
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        
+     
     }
     
     //the switches for the sizes.  Choosing one sets the others to false
@@ -100,11 +133,21 @@ class NewOrderViewController: UIViewController {
             } else {
                 order.toppings = toppinsTextFiled.text!
             }
-            let prevOrder = PrevOrder(context: context)
-            prevOrder.size = order.size
-            prevOrder.toppings = order.toppings
-            prevOrder.delivery = order.delivery
-            prevOrder.price = "$" + String(format: "%.2f", order.calculateTotalPriceWithTax())
+            if(editMode){
+                prevOrder.size = order.size
+                prevOrder.toppings = order.toppings
+                prevOrder.delivery = order.delivery
+                prevOrder.price = "$" + String(format: "%.2f", order.calculateTotalPriceWithTax())
+            }else{
+                let prevOrder = PrevOrder(context: context)
+                prevOrder.size = order.size
+                prevOrder.toppings = order.toppings
+                prevOrder.delivery = order.delivery
+                prevOrder.price = "$" + String(format: "%.2f", order.calculateTotalPriceWithTax())
+            }
+            
+            
+          
             do {
                 try context.save()
                 
